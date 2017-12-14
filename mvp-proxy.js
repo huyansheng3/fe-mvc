@@ -16,12 +16,14 @@ function View() {
   //获取节点
   var $num = $('#num')
   var $add = $('#add')
+  var $desc = $('#desc')
   this.render = function(model) {
     $num.text(model.val)
   }
   this.init = function() {
     var presenter = new Presenter(this)
     $add.on('click', presenter.add)
+    $desc.on('click', presenter.desc)
   }
 }
 
@@ -33,6 +35,10 @@ function Presenter(view) {
   this.add = function() {
     // Presenter 层就数据操作和 render 结合到一起，使得 数据驱动页面 render
     _model.val += 1
+  }
+  this.desc = function() {
+    // Presenter 层就数据操作和 render 结合到一起，使得 数据驱动页面 render
+    _model.val -= 1
   }
 }
 //运行时以View为入口
