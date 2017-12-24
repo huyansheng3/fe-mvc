@@ -23,6 +23,7 @@ function View(control) {
 }
 
 // 核心在于 control 中处理事件等相关的业务逻辑, control 作为一个中间层
+// 也是讲 model 和 view 绑定，但一个 model 可以绑定多个 view
 function Control() {
   let view = null
   let model = null
